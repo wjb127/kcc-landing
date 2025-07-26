@@ -18,7 +18,7 @@ export interface ConsultationRequest {
 
 export async function createConsultationRequest(data: Omit<ConsultationRequest, 'id' | 'created_at' | 'status'>) {
   const { data: result, error } = await supabase
-    .from('consultation_requests')
+    .from('kmong_3_consultation_requests')
     .insert([{
       ...data,
       status: 'pending'
@@ -35,7 +35,7 @@ export async function createConsultationRequest(data: Omit<ConsultationRequest, 
 
 export async function getConsultationRequests() {
   const { data, error } = await supabase
-    .from('consultation_requests')
+    .from('kmong_3_consultation_requests')
     .select('*')
     .order('created_at', { ascending: false })
 

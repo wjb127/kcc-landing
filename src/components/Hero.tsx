@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Phone, MapPin } from 'lucide-react'
+import { createConsultationRequest } from '@/lib/supabase'
 
 interface ConsultationForm {
   name: string
@@ -20,17 +21,12 @@ export default function Hero() {
     setIsSubmitting(true)
     
     try {
-      // Supabase에 데이터 저장 (실제 환경에서 활성화)
-      // await createConsultationRequest(data)
+      // Supabase에 데이터 저장
+      await createConsultationRequest(data)
       
-      // 임시 처리 - 실제 환경에서는 위 코드로 대체
-      console.log('상담신청 데이터:', data)
-      
-      setTimeout(() => {
-        alert('상담신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.')
-        reset()
-        setIsSubmitting(false)
-      }, 1000)
+      alert('상담신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다.')
+      reset()
+      setIsSubmitting(false)
     } catch (error) {
       console.error('상담신청 오류:', error)
       alert('신청 중 오류가 발생했습니다. 다시 시도해주세요.')

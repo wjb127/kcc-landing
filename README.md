@@ -91,7 +91,7 @@ src/
 
 ## 🗄️ 데이터베이스 스키마
 
-### consultation_requests 테이블
+### kmong_3_consultation_requests 테이블
 - `id`: UUID (Primary Key)
 - `name`: 신청자 이름
 - `phone`: 연락처

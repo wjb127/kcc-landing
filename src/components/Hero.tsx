@@ -35,22 +35,37 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center">
-      {/* 배경 패턴 */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='0.05'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v22H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z'/%3E%3C/g%3E%3C/svg%3E")`
-        }} />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* 배경 이미지 */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+          alt="Modern Architecture Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
       </div>
+      
+      {/* 장식 요소 */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* 왼쪽: 메인 텍스트 */}
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <span className="text-cyan-400 text-sm font-medium">KCC GREEN REMODELING PRODUCT</span>
+          </div>
+          
+          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             KCC 창호
-            <span className="block text-blue-600">전문 시공</span>
+            <span className="block text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text">
+              전문 시공
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+          
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
             고품질 KCC 창호로 우리 집을 더욱 안전하고 쾌적하게 만들어보세요.
             전문 시공팀이 완벽한 설치를 보장합니다.
           </p>
@@ -58,30 +73,43 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
             <a 
               href="tel:1522-7795" 
-              className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="group inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              <Phone className="mr-2 h-5 w-5" />
+              <Phone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               1522-7795
             </a>
             <a 
               href="#location" 
-              className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center justify-center border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
             >
               <MapPin className="mr-2 h-5 w-5" />
               전시장 보기
             </a>
           </div>
 
-          <div className="text-sm text-gray-500">
-            KCC GREEN REMODELING PRODUCT
+          <div className="flex items-center gap-4 text-sm text-gray-400">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span>24시간 상담 가능</span>
+            </div>
+            <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+            <span>무료 견적</span>
           </div>
         </div>
 
         {/* 오른쪽: 상담신청 폼 */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            무료 상담 신청
-          </h2>
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20 hover:shadow-3xl transition-all duration-300">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl mb-4">
+              <Phone className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              무료 상담 신청
+            </h2>
+            <p className="text-gray-600 text-sm">
+              전문가가 직접 상담해드립니다
+            </p>
+          </div>
           
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
@@ -167,9 +195,16 @@ export default function Hero() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:scale-105"
             >
-              {isSubmitting ? '전송 중...' : '무료 상담 신청하기'}
+              {isSubmitting ? (
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  전송 중...
+                </div>
+              ) : (
+                '무료 상담 신청하기'
+              )}
             </button>
           </form>
 

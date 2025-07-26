@@ -56,35 +56,14 @@ const locations = [
 
 export default function Location() {
   return (
-    <section id="location" className="relative py-20 overflow-hidden">
-      {/* 배경 */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="City Skyline Background"
-          className="w-full h-full object-cover opacity-5"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-white"></div>
-      </div>
-      
-      {/* 장식 요소 */}
-      <div className="absolute top-10 right-20 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="location" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-            <span className="text-blue-600 text-sm font-semibold">전시장 안내</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            전시장 
-            <span className="block text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">
-              위치 안내
-            </span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            전시장 위치 안내
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            직접 보고 만져보실 수 있는 KCC 창호 전시장을 방문해보세요.
-            전문 상담사가 친절하게 안내해드립니다.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            직접 보고 만져보실 수 있는 KCC 창호 전시장을 방문해보세요
           </p>
         </div>
 

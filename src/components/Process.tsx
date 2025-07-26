@@ -73,35 +73,14 @@ const serviceFeatures = [
 
 export default function Process() {
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* 배경 */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="Construction Process Background"
-          className="w-full h-full object-cover opacity-5"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-50"></div>
-      </div>
-      
-      {/* 장식 요소 */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-            <span className="text-blue-600 text-sm font-semibold">진행 프로세스</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            신청 후 
-            <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-              진행과정
-            </span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            신청 후 진행과정
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            상담 신청부터 시공 완료까지 체계적이고 전문적인 프로세스로
-            고객 만족을 최우선으로 진행합니다.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            상담 신청부터 시공 완료까지 체계적이고 전문적인 프로세스
           </p>
         </div>
 
@@ -114,47 +93,26 @@ export default function Process() {
 
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
             {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50">
-                  {/* 아이콘과 단계 */}
-                  <div className="flex flex-col items-center mb-6">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${
-                      index === 0 ? 'from-blue-500 to-cyan-500' :
-                      index === 1 ? 'from-green-500 to-emerald-500' :
-                      index === 2 ? 'from-yellow-500 to-orange-500' :
-                      index === 3 ? 'from-orange-500 to-red-500' :
-                      'from-purple-500 to-indigo-500'
-                    } rounded-2xl flex items-center justify-center mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300`}>
-                      <step.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="bg-gradient-to-r from-gray-100 to-blue-50 text-gray-700 px-4 py-2 rounded-full text-sm font-bold border border-gray-200">
-                      {step.step}
-                    </div>
+              <div key={index} className="text-center">
+                <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <step.icon className="h-8 w-8 text-blue-600" />
                   </div>
-
-                  {/* 제목과 설명 */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center group-hover:text-blue-600 transition-colors">
+                  
+                  <div className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">
+                    {step.step}
+                  </div>
+                  
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 text-center leading-relaxed">
+                  
+                  <p className="text-gray-600 text-sm mb-4">
                     {step.description}
                   </p>
-
-                  {/* 세부사항 */}
-                  <ul className="space-y-2 mb-4">
-                    {step.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-2 mt-1.5 flex-shrink-0 group-hover:animate-pulse" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* 소요시간 */}
-                  <div className="text-center">
-                    <span className="bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold border border-blue-200">
-                      ⏱️ {step.duration}
-                    </span>
+                  
+                  <div className="text-xs text-blue-600 font-semibold">
+                    소요시간: {step.duration}
                   </div>
                 </div>
               </div>

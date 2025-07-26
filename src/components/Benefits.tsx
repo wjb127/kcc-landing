@@ -184,6 +184,51 @@ export default function Benefits() {
             </div>
           </div>
         </div>
+
+        {/* KCC 기술 이미지 섹션 */}
+        <div className="mt-20 grid lg:grid-cols-2 gap-8">
+          {/* 첫 번째 이미지 - 기술 특징 */}
+          <div className="group bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/50 hover:shadow-3xl transition-all duration-300">
+            <div className="relative">
+              <img 
+                src="/kcc-technology.jpg"
+                alt="KCC 창호 기술 특징 - 아르곤가스, TPS단열간봉, 로이유리"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+            </div>
+            <div className="p-6">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                KCC e-MAX 혁신 기술
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                국내 최초 내부창에도 무상 적용! 아르곤가스 + TPS단열간봉 + 로이유리 기본 적용으로 
+                최고 수준의 단열 성능을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          {/* 두 번째 이미지 - 제품 사양 */}
+          <div className="group bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/50 hover:shadow-3xl transition-all duration-300">
+            <div className="relative">
+              <img 
+                src="/kcc-specifications.jpg"
+                alt="KCC 케이씨씨 창호 제품 사양 및 두께 정보"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+            </div>
+            <div className="p-6">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                KCC 케이씨씨 제품 사양
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                다양한 창호 위치별 최적화된 구조와 두께로 설계되어 
+                15년 품질보증이 가능한 프리미엄 창호 시스템입니다.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

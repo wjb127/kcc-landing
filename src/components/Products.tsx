@@ -78,10 +78,16 @@ export default function Products() {
       <div className="container mx-auto px-4 relative z-10">
         {/* 제품 소개 */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            KCC 창호 제품 라인업
+          <div className="inline-flex items-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+            <span className="text-blue-600 text-sm font-semibold">제품 라인업</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            KCC 창호 
+            <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+              제품 라인업
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             다양한 건물 유형과 용도에 맞는 최적의 창호 솔루션을 제공합니다.
             각 제품은 KCC의 첨단 기술력으로 완성된 프리미엄 품질입니다.
           </p>
@@ -91,20 +97,27 @@ export default function Products() {
           {products.map((product, index) => (
             <div
               key={index}
-              className="relative bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50"
             >
               {product.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    인기
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                  <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    ⭐ 인기
                   </span>
                 </div>
               )}
               
               <div className="text-center mb-6">
-                <div className="text-4xl mb-4">{product.image}</div>
-                <product.icon className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">{product.image}</div>
+                <div className={`w-16 h-16 ${
+                  index === 0 ? 'bg-gradient-to-br from-blue-500 to-cyan-500' :
+                  index === 1 ? 'bg-gradient-to-br from-purple-500 to-blue-500' :
+                  index === 2 ? 'bg-gradient-to-br from-green-500 to-blue-500' :
+                  'bg-gradient-to-br from-orange-500 to-red-500'
+                } rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <product.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {product.title}
                 </h3>
               </div>
@@ -113,19 +126,19 @@ export default function Products() {
                 {product.description}
               </p>
               
-              <ul className="space-y-2">
+              <ul className="space-y-3 mb-6">
                 {product.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
                     className="flex items-center text-sm text-gray-700"
                   >
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mr-3 group-hover:animate-pulse" />
                     {feature}
                   </li>
                 ))}
               </ul>
               
-              <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:scale-105">
                 자세히 보기
               </button>
             </div>
